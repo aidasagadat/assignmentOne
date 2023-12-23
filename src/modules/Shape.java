@@ -12,6 +12,9 @@ public class Shape {
     }
 
     // calculatePerimeter()
+    public void example(){
+        System.out.println("blablabla");
+    }
 
     // getAverageSide()
 
