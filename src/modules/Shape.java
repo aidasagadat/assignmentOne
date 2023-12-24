@@ -12,11 +12,59 @@ public class Shape {
     }
 
     // calculatePerimeter()
-    public void example(){
-        System.out.println("blablablaaaaaфф");
+    public double calculatePerimeter(){
+        double P = 0.0;
+        int numberOfSides = points.size();
+        for(int i = 0; i< numberOfSides; i++){
+            Point curPoint = points.get(i);
+            Point nextPoint = points.get((i+1)%numberOfSides);
+            P+=curPoint.distanceTo(nextPoint);
+        }
+        return P;
     }
 
     // getAverageSide()
+    public double getAverageSide(){
+        double threeSides = 0.0;
+        double averageSide = 0.0;
+
+        int numberOfSides = points.size();
+        for(int i = 0; i < numberOfSides; i++){
+            Point curPoint = null;
+            Point nextPoint = null;
+
+            curPoint = points.get(i);
+            nextPoint = points.get(i+1);
+
+            threeSides = threeSides + curPoint.distanceTo(nextPoint);
+
+        }
+
+        averageSide = threeSides/numberOfSides;
+        return averageSide;
+
+    }
 
     // getLongestSide()
-}ff
+    public double getLongestSide(){
+        double longestSide = 0.0;
+
+        int numberOfSIdes = points.size();
+        for(int i = 0; i < numberOfSIdes; i++){
+            Point curPoint = null;
+            Point nextPoint = null;
+
+            curPoint = points.get(i);
+            nextPoint = points.get((i+1)/numberOfSIdes);
+
+            double curSide = curPoint.distanceTo(nextPoint);
+
+            if(longestSide < curSide){
+                longestSide = curSide;
+            }
+
+        }
+
+        return longestSide;
+    }
+}
