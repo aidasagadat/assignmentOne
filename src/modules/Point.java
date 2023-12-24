@@ -18,7 +18,7 @@ public class Point {
     }
 
 
-    // toString
+    // overriding toString method
     @Override
     public String toString() {
         return this.x + " and " + this.y;
